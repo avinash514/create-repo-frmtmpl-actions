@@ -9262,6 +9262,7 @@ async function run() {
     template_owner: targetOrgName,
     template_repo: templateRepoName,
     name: targetRepoName,
+    include_all_branches: true,
   });
   console.log(response)
   console.log("Repo "+targetRepoName+' created successfully!');
