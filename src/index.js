@@ -43,6 +43,7 @@ async function run() {
     template_repo: templateRepoName,
     name: targetRepoName,
   });
+  console.log("Repo Created Successfully");
 }
 
 run();
