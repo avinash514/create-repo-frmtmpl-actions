@@ -9258,12 +9258,14 @@ const targetOrgName = github.context.payload.repository.owner.login;
 })();*/
 
 async function run() {
-  await octokit.rest.repos.createUsingTemplate({
+  const response = await octokit.rest.repos.createUsingTemplate({
     template_owner: targetOrgName,
     template_repo: templateRepoName,
     name: targetRepoName,
   });
-  console.log("Repo Created Successfully");
+  console.log(response)
+  console.log("Repo "+targetRepoName+' created successfully!');
+  core.setOutput("repo-url", "https://github.com/"+targetOrgName+"/"+targetRepoName);
 }
 
 run();
