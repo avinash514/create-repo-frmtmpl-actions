@@ -45,8 +45,8 @@ async function run() {
     include_all_branches: true,
   });
   console.log(response)
-  console.log("Repo "+targetRepoName+' created successfully!');
-  core.setOutput("repo-url", "https://github.com/"+targetOrgName+"/"+targetRepoName);
+  console.log("Repo "+response.data.name+' created successfully!');
+  core.setOutput("repo-url", "https://github.com/"+response.data.full_name);
 }
 
 run();
