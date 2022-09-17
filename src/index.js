@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const octokit = require('@octokit/rest')
+const octokit = require('@octokit/rest');
 
 const targetRepoName = core.getInput('repo-name');
 const ghToken = core.getInput('org-admin-token');
