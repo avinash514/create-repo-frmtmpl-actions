@@ -2,26 +2,11 @@
   "name": "create-repo-frmtmpl-actions",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/avinash514/create-repo-frmtmpl-actions.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/avinash514/create-repo-frmtmpl-actions/issues"
-  },
-  "homepage": "https://github.com/avinash514/create-repo-frmtmpl-actions#readme",
+  "main": "src/index.js",
   "dependencies": {
     "@actions/core": "^1.9.1",
     "@actions/github": "^5.0.3",
     "@octokit/core": "^4.0.5",
-    "@octokit/rest": "^19.0.4",
-    "@vercel/ncc": "^0.32.0"
+    "@octokit/rest": "^19.0.4"
   }
 }
