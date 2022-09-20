@@ -9220,50 +9220,26 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-
-
-
-
 const targetRepoName = core.getInput('repo-name');
 const ghToken = core.getInput('org-admin-token');
 const templateRepoName = core.getInput('template-repo-name');
+const targetOwner = core.getInput('owner');
+const description = core.getInput('description');
+const include_all_branches = core.getInput('include_all_branches');
+const private = core.getInput('private');
 const octokit = github.getOctokit(ghToken);
-
 const targetOrgName = github.context.payload.repository.owner.login;
 
-  
-/*const response = await octokit.request('POST /repos/{template_owner}/{template_repo}/generate', {
-    template_owner: targetOrgName,
-    template_repo: templateRepoName,
-    owner: targetOrgName,
-    name: targetRepoName,
-    description: 'This is your first repository',
-    include_all_branches: false,
-    'private': false
-  })*/
-
-  // await octokit.rest.repos.createUsingTemplate({
-  //   template_owner: targetOrgName,
-  //   template_repo: templateRepoName,
-  //   name: targetRepoName,
-  // });
-
-/*(async function run(){
-  const response = await octokit.rest.repos.createUsingTemplate({
-    template_owner: targetOrgName,
-    template_repo: templateRepoName,
-    name: targetRepoName,
-  });
-  console.log(response);
-})();*/
 
 async function run() {
   const response = await octokit.rest.repos.createUsingTemplate({
     template_owner: targetOrgName,
     template_repo: templateRepoName,
-    owner: 'avinash514org',
+    owner: targetOwner,
     name: targetRepoName,
-    include_all_branches: true,
+    description: description,
+    include_all_branches: include_all_branches,
+    private: private,
   });
   //console.log(response)
   console.log("Repo "+response.data.name+' created successfully!');
