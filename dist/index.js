@@ -9225,8 +9225,8 @@ const ghToken = core.getInput('org-admin-token');
 const templateRepoName = core.getInput('template-repo-name');
 const targetOwner = core.getInput('owner');
 const description = core.getInput('description');
-const include_all_branches = core.getInput('include_all_branches');
-const private = core.getInput('private');
+var include_all_branches = new Boolean(core.getInput('include_all_branches'));
+var private = new Boolean(core.getInput('private'));
 const octokit = github.getOctokit(ghToken);
 const targetOrgName = github.context.payload.repository.owner.login;
 
