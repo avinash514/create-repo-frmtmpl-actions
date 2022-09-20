@@ -9261,10 +9261,11 @@ async function run() {
   const response = await octokit.rest.repos.createUsingTemplate({
     template_owner: targetOrgName,
     template_repo: templateRepoName,
+    owner: 'avinash514org',
     name: targetRepoName,
     include_all_branches: true,
   });
-  console.log(response)
+  //console.log(response)
   console.log("Repo "+response.data.name+' created successfully!');
   core.setOutput("repo-url", "https://github.com/"+response.data.full_name);
 }
